@@ -1,0 +1,20 @@
+.experience {
+  margin-bottom: 2rem;
+}
+
+.experience h2, .experience h3 {
+  margin: 0.5rem 0;
+}
+
+.experience ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.experience li {
+  height: 1rem;
+  background-color: #1e293b;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  width: 60%;
+}

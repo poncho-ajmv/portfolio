@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.contact-footer {
+  background-color: rgba(255, 255, 255, 0.01);
+  padding: 1rem 2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  box-shadow: 0 0 16px rgba(0, 255, 156, 0.05);
+  max-width: 900px;
+  margin: 4rem auto 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.contact-title {
+  font-size:2rem;
+  font-weight: 900;
+  margin-bottom: 0.1rem;
+  letter-spacing: 0.5px;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.contact-subtitle {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  opacity: 0.85;
+  font-family: 'Press Start 2P', monospace;
+}
+
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;              /* antes 1.2rem */
+  margin-bottom: 1.5rem;  /* antes 2.5rem → más pegado al email-heading */
+}
+ 
+
+.contact-box {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.app.dark .contact-box {
+  background-color: #1e293b;
+  color: white;
+}
+
+.app.dark .contact-box:hover {
+  background-color: #334155;
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+}
+
+.linkedin {
+  color: #0a66c2;
+}
+.github {
+  color: #24292e;
+}
+.discord {
+  color: #5865F2;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.email-heading {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #00ff88;
+  margin-bottom: 0.8rem; 
+  font-family: 'Press Start 2P', monospace;
+}
+
+
+
+
+
+
+.icon-button {
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  justify-content: center;
+  min-width: 2.5rem;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.icon-button:hover {
+  background-color: #4338ca;
+}
+
+.ascii-separator {
+  
+  color: #00ff88;
+  text-align: center;
+  margin: 2.5rem auto 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.made-by {
+  margin-top: 2.5rem;
+  font-size: 0.65rem;
+  opacity: 0.5;
+ 
+  text-align: center;
+  font-style: italic;
+}
+
+.made-by-label {
+  color: #00ff9c;
+  margin-right: 0.5rem;
+}
+
+.author-name {
+  color: #4f46e5;
+  font-weight: bold;
+}
+
+
+.footer-form-style input {
+  font-family: 'Press Start 2P', monospace;
+ 
+  font-size: 0.1rem;                   /* 🔹 un poco más pequeño que antes */
+  min-width: 360px;                   /* 🔹 aún legible, más compacto */
+  line-height: 1.2;
+  overflow: auto;
+  
+}
+
+
+
+.footer-form-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* para que no se rompa en móviles */
+  gap: 0.5rem;
+  margin: 0 auto;
+  max-width: 100%;
+  padding-top: 0.5rem;
+}
+
+
+
+

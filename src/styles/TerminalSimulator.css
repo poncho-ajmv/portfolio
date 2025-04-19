@@ -1,0 +1,39 @@
+.terminal-box {
+  background-color: #0d1117;
+  color: #00ff9c;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 156, 0.15);
+  max-width: 90%;
+  margin: 3rem auto;
+  font-size: 1rem;
+  line-height: 1.4;
+  border: 1px solid rgba(0, 255, 156, 0.15);
+  overflow: hidden;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* ☀️ LIGHT MODE */
+body.light-body .terminal-box {
+  background-color: #f4f7fb;
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 0 15px rgba(15, 23, 42, 0.05);
+ 
+}
+
+.terminal-line {
+  white-space: pre-wrap;
+  margin-bottom: 0.25rem;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}

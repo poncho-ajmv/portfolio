@@ -1,0 +1,303 @@
+:root {
+  --discord-bg: #1e293b;
+  --discord-text: #fff;
+  --banner-bg: #0f172a;
+  --note-text: #cbd5e1;
+  --link-blue: #60a5fa;
+  --spotify-bg: #111827;
+  --role-color-0: #3b82f6;
+  --role-color-1: #a855f7;
+}
+
+body.light-body {
+  --discord-bg: #e2e8f0;
+  --discord-text: #0f172a;
+  --banner-bg: #cbd5e1;
+  --note-text: #0f172a;
+  --link-blue: #2563eb;
+  --spotify-bg: #cbd5e1;
+  --role-color-0: #2563eb;
+  --role-color-1: #9333ea;
+}
+
+.discord-profile {
+  max-width: 400px;
+  background-color: var(--discord-bg);
+  margin: 3rem auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  font-family: 'Fira Code', monospace;
+  color: var(--discord-text);
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+}
+
+.banner-gif {
+  height: 100px;
+  background-image: url('https://i.pinimg.com/originals/02/87/d3/0287d3ba8b3330fca99f69e2001d3168.gif');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 0;
+}
+
+.profile-container {
+  position: relative;
+  padding: 1rem;
+  padding-top: 3rem;
+  z-index: 1;
+}
+
+.note-bubble {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  margin-left: 0.2rem;
+}
+
+.note-avatar-wrapper {
+  position: relative;
+  width: 70px;
+  height: 68px;
+}
+
+.note-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 70%;
+  object-fit: cover;
+  border: 2px solid #2c2f33;
+  transition: transform 0.3s ease;
+}
+
+.note-avatar:hover {
+  transform: scale(1.05);
+}
+
+.status-circle {
+  width: 10px;
+  height: 10px;
+  background-color: #43b581;
+  border-radius: 50%;
+  border: 2px solid #2c2f33;
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+}
+
+.note-content {
+  background-color: #2c2f33;
+  padding: 0.6rem 1rem;
+  border-radius: 0.9rem;
+  border-top-left-radius: 0.35rem;
+  color: white;
+  font-size: 0.87rem;
+  max-width: 240px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  line-height: 1.45;
+  font-family: 'Fira Code', monospace;
+  transition: background-color 0.3s;
+}
+
+.note-content:hover {
+  background-color: #3a3f47;
+}
+
+.note-text {
+  margin: 0;
+}
+
+.profile-info h3 {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  color: #f3f4f6;
+}
+
+.tag {
+  font-size: 0.9rem;
+  color: var(--note-text);
+  margin-bottom: 0.6rem;
+  font-family: 'Fira Code', monospace;
+}
+
+.playing {
+  font-size: 0.9rem;
+  color: #a5b4fc;
+  margin-bottom: 1rem;
+  font-family: 'Fira Code', monospace;
+}
+
+.spotify-widget {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+  background-color: var(--spotify-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  height: 90px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid #334155;
+}
+
+.album-art {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 200px;
+  font-family: 'Fira Code', monospace;
+}
+
+.song-info .song {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-height: 2.5rem;
+}
+
+.song-info .artist {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.about-me {
+  margin-top: 1rem;
+}
+
+.about-me p {
+  font-size: 0.85rem;
+  color: var(--note-text);
+  margin: 0.3rem 0;
+  font-family: 'Fira Code', monospace;
+}
+
+.external-link a {
+  color: var(--link-blue);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.external-link a:hover {
+  text-decoration: underline;
+}
+
+.bullets {
+  list-style: disc;
+  margin-left: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--note-text);
+}
+
+.extra-info {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  font-family: 'Fira Code', monospace;
+}
+
+.joined {
+  margin-bottom: 0.8rem;
+  color: #94a3b8;
+}
+
+.roles {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem 0 1rem;
+  flex-wrap: wrap;
+}
+
+.role-pill {
+  padding: 0.3rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  background-color: var(--role-color-0);
+  color: #fff;
+  font-family: 'Fira Code', monospace;
+  transition: background-color 0.3s;
+}
+
+.role-pill:hover {
+  background-color: #60a5fa;
+}
+
+.color-1 {
+  background-color: var(--role-color-1);
+}
+
+.message-box {
+  background-color: var(--spotify-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  border: 1px solid #334155;
+}
+
+.message-box input {
+  background: none;
+  border: none;
+  color: var(--note-text);
+  font-size: 0.85rem;
+  width: 100%;
+  outline: none;
+  font-family: 'Fira Code', monospace;
+}
+
+.message-box button {
+  background: none;
+  border: none;
+  color: var(--note-text);
+  cursor: pointer;
+  padding-left: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.message-box button:hover {
+  color: white;
+}
+
+.fade-in {
+  animation: fadeInAlbum 0.7s ease-in-out;
+}
+
+@keyframes fadeInAlbum {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.icon-inline {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}

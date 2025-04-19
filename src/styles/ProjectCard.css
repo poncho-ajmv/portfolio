@@ -1,0 +1,142 @@
+.project-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1280px;
+  justify-content: center;
+}
+
+/* Tarjeta tipo card, vertical con imagen arriba */
+.project-wrapper {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+.project-image-box {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.project-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-image-box:hover img {
+  transform: scale(1.05);
+}
+
+.project-content-box {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content-box h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-title);
+}
+
+.project-content-box p {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.tech-icons img {
+  height: 28px;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.project-section.dark .btn {
+  background-color: #272727;
+  color: white;
+}
+
+.project-section.light .btn {
+  background-color: #1f2937;
+  color: white;
+}
+
+.project-section.dark .btn:hover {
+  background-color: #333333;
+}
+
+.project-section.light .btn:hover {
+  background-color: #111827;
+}
+
+.live-btn .link-icon {
+  transition: transform 0.3s ease, margin-left 0.3s ease;
+  transform-origin: center;
+  margin-left: 0px;
+}
+
+.live-btn:hover .link-icon {
+  transform: rotate(-25deg) scale(1.1);
+  margin-left: 6px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-content-box h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-content-box p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+
+  .tech-icons img {
+    height: 24px;
+  }
+}

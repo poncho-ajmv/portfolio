@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;600&display=swap');
+
+/* Fuente reutilizable */
+.fira-code {
+  font-family: 'Fira Code', monospace;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Contenedor de navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.2rem 0;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background-color: transparent;
+}
+
+/* Botones de navegación */
+.nav-link {
+  background: none;
+  border: none;
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  color: #ffffff; /* Color base (por si no hay tema aplicado) */
+}
+
+/* Subrayado animado */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #00ff9c;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-link:hover {
+  background-color: rgba(235, 229, 229, 0.035);
+  box-shadow: 0 0 4px rgba(244, 239, 239, 0.08);
+}
+
+/* Navbar reducida al hacer scroll */
+.navbar.shrink .nav-link {
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+}
+
+/* 🌙 DARK MODE */
+body.dark-body .navbar .nav-link {
+  color: #fdfdfd;
+}
+body.dark-body .navbar .nav-link::after {
+  background: #00ff9c;
+}
+body.dark-body .navbar .nav-link:hover {
+  background-color: rgba(0, 255, 156, 0.1);
+  box-shadow: 0 0 6px rgba(0, 255, 156, 0.25);
+}
+
+/* ☀️ LIGHT MODE */
+body.light-body .navbar .nav-link {
+  color: #0f172a;
+}
+body.light-body .navbar .nav-link::after {
+  background: #00b894;
+}
+body.light-body .navbar .nav-link:hover {
+  background-color: rgba(15, 23, 42, 0.05);
+  box-shadow: 0 0 4px rgba(15, 23, 42, 0.08);
+}
