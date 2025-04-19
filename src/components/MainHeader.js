@@ -30,7 +30,8 @@ function MainHeader({ darkMode, setDarkMode }) {
 
             </div>
           )}
-          {isShrunk && <h1 className="header-name">poncho_ajmv</h1>}
+          {isShrunk && <h1 className="header-name fira-code">poncho_ajmv</h1>}
+
         </div>
 
         {/* Nuevo contenedor a la derecha */}

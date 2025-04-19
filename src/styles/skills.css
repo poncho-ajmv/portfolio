@@ -8,10 +8,14 @@
 }
 
 .skills-title {
-  font-size: 1.8rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 2.2rem;
+  font-weight: 700; /* Más grueso */
+  color: #f1f5f9;    /* Asegura buena visibilidad en modo oscuro */
   margin-bottom: 2rem;
-  font-weight: 600;
+  letter-spacing: 1px;
 }
+
 
 .skills-subtitle {
   font-size: 1.4rem;

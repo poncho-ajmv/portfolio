@@ -2,44 +2,66 @@
 import '../styles/ProjectCard.css';
 
 export default function ProjectCard({ darkMode }) {
+
   const projects = [
     {
-      image: "/FILMFANATIC.png",
-      title: "Film Fanatic",
+      image: "/Generation.png", // asegurate de tener esta imagen también
+      title: "Retro Password Generator",
       description:
-        "Movie browser built with the TMDB API. Search, explore, and view real-time information in a sleek and responsive UI.",
+        "A fun and retro-themed password generator built with React. Features copy-to-clipboard and customizable options.",
       techIcons: "https://skillicons.dev/icons?i=react,js,html,css",
-      liveLink: "https://film-fanatic-eta.vercel.app",
-      codeLink: "https://github.com/poncho-ajmv/FilmFanatic",
+      liveLink: "https://retro-password-generator.vercel.app/",
+      codeLink: "https://github.com/poncho-ajmv/retro-password-generator",
     },
-    {
-      image: "/Lexico.png",
-      title: "Lexical Analyzer",
-      description:
-        "Educational React-based tool for lexical analysis using basic automata theory and token parsing.",
-      techIcons: "https://skillicons.dev/icons?i=react,js,html,css",
-      liveLink: "https://analizador-lexico-web.vercel.app/",
-      codeLink: "https://github.com/poncho-ajmv/analizador-lexico-web",
-    },
-    {
-      image: "/sf.png",
-      title: "Metaheuristics with Python",
-      description:
-        "Repository featuring optimization algorithms like Simulated Annealing and Local Search, applied to Python problems.",
-      techIcons: "https://skillicons.dev/icons?i=python,jupyter",
-      liveLink: null,
-      codeLink: "https://github.com/poncho-ajmv/Metaheurisitcas_With_Python",
-    },
-    {
-      image: "/GUI.png",
-      title: "Expression Evaluator GUI",
-      description:
-        "Java GUI application that interprets and evaluates infix expressions. Ideal for visualizing mathematical processes.",
-      techIcons: "https://skillicons.dev/icons?i=java",
-      liveLink: null,
-      codeLink: "https://github.com/poncho-ajmv/EvaluadorExpresionesGUI",
-    },
-  ];
+  {
+    image: "/FILMFANATIC.png",
+    title: "Film Fanatic",
+    description:
+      "Movie browser built with the TMDB API. Search, explore, and view real-time information in a sleek and responsive UI.",
+    techIcons: "https://skillicons.dev/icons?i=react,js,html,css",
+    liveLink: "https://film-fanatic-eta.vercel.app",
+    codeLink: "https://github.com/poncho-ajmv/FilmFanatic",
+  },
+  {
+    image: "/Terminal.png", // asegurate de tener esta imagen en /public
+    title: "Terminal Interactiva",
+    description:
+      "A Linux-like interactive web terminal that simulates commands like `cd`, `ls`, `mkdir`, `rm`, and more.",
+    techIcons: "https://skillicons.dev/icons?i=react,js,html,css",
+    liveLink: "https://terminal-interactiva.vercel.app/",
+    codeLink: "https://github.com/poncho-ajmv/terminal-interactiva",
+  },
+  
+  {
+    image: "/Lexico.png",
+    title: "Lexical Analyzer",
+    description:
+      "Educational React-based tool for lexical analysis using basic automata theory and token parsing.",
+    techIcons: "https://skillicons.dev/icons?i=react,js,html,css",
+    liveLink: "https://analizador-lexico-web.vercel.app/",
+    codeLink: "https://github.com/poncho-ajmv/analizador-lexico-web",
+  },
+  {
+    image: "/sf.png",
+    title: "Metaheuristics with Python",
+    description:
+      "Repository featuring optimization algorithms like Simulated Annealing and Local Search, applied to Python problems.",
+    techIcons: "https://skillicons.dev/icons?i=python,jupyter",
+    liveLink: null,
+    codeLink: "https://github.com/poncho-ajmv/Metaheurisitcas_With_Python",
+  },
+  {
+    image: "/GUI.png",
+    title: "Expression Evaluator GUI",
+    description:
+      "Java GUI application that interprets and evaluates infix expressions. Ideal for visualizing mathematical processes.",
+    techIcons: "https://skillicons.dev/icons?i=java",
+    liveLink: null,
+    codeLink: "https://github.com/poncho-ajmv/EvaluadorExpresionesGUI",
+  },
+  
+];
+
 
   return (
     <section
