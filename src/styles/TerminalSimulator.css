@@ -1,0 +1,41 @@
+/* Estilo original: sin barra de titulo, todo en verde y con el glow. */
+.terminal-box {
+  background-color: var(--bg);
+  color: var(--green);
+  padding: 1.5rem 2rem;
+  border-radius: var(--r);
+  box-shadow: 0 0 20px var(--green-dim);
+  border: 1px solid var(--green-line);
+  /* Ancho completo del contenedor: antes era 90% centrado y quedaba en un
+     borde distinto al de los titulos y las tarjetas.
+     Abajo lleva menos margen que arriba porque el padding-top de la primera
+     seccion ya aporta 44px; con 3rem sumaban 92px. */
+  margin: 2rem 0 1rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  /* min-height fija: sin esto la caja crece linea por linea mientras se
+     escribe la animacion y empuja el resto de la pagina. */
+  min-height: 9.5rem;
+  overflow: hidden;
+  transition: background-color .3s, color .3s, box-shadow .3s;
+}
+
+[data-theme="light"] .terminal-box {
+  background-color: #f4f7fb;
+  box-shadow: 0 0 15px rgba(15, 23, 42, .05);
+}
+
+.terminal-line {
+  white-space: pre-wrap;
+  margin-bottom: .25rem;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1 }
+  50.01%, 100% { opacity: 0 }
+}
