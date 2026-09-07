@@ -1,0 +1,39 @@
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.25rem }
+
+.project-wrapper { overflow: hidden; display: flex; flex-direction: column }
+.project-wrapper:hover { transform: translateY(-3px) }
+
+/* La portada completa es el enlace. tabindex="-1" para que Tab no la visite
+   dos veces: los botones de abajo ya llevan al mismo sitio. */
+.project-media { display: block; flex: none }
+
+.project-image-box { display: block; height: 158px; overflow: hidden; background: var(--chip) }
+.project-image-box img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s }
+.project-wrapper:hover .project-image-box img { transform: scale(1.04) }
+
+/* Portada tipográfica para los repos sin captura: misma altura, mismo lenguaje. */
+.project-cover {
+  height: 158px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  flex: none;
+  font-size: var(--t-sm);
+  color: var(--green);
+  white-space: pre;
+  line-height: 1.5;
+  opacity: .85;
+  text-align: center;
+}
+
+.project-content-box { padding: 1.05rem; display: flex; flex-direction: column; gap: .55rem; flex: 1 }
+.project-content-box h3 { font-size: var(--t-lg); font-weight: 700; margin: 0 }
+.project-content-box p { margin: 0; font-size: var(--t-sm); color: var(--muted); line-height: 1.6; flex: 1 }
+
+.project-tags { display: flex; flex-wrap: wrap; gap: .3rem }
+.project-buttons { display: flex; gap: .45rem; margin-top: .2rem; flex-wrap: wrap }
+
+/* El enlace de la portada no debe subrayar la portada tipográfica. */
+.project-media { text-decoration: none }
