@@ -1,0 +1,126 @@
+/* Bloque de contacto. Estructura, tipografia y colores del original:
+   Press Start 2P en todo y los botones en indigo. Las superficies y los
+   bordes salen de los tokens para que el modo claro funcione solo. */
+
+.contact-footer {
+  /* Mismo fondo que el bloque del CTA: los dos van sobre la pagina y solo
+     se diferencian por el peso del borde. Antes era rgba(255,255,255,.01),
+     que no es ningun fondo. */
+  background-color: var(--bg);
+  padding: 1rem 2rem 2rem;
+  border-radius: var(--r);
+  border: 1px solid var(--line);
+  box-shadow: 0 0 16px var(--green-dim);
+  margin: 3rem 0 0;
+  text-align: center;
+}
+
+.contact-title {
+  font-family: var(--pixel);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: .5px;
+  color: var(--text);
+  margin: 1rem 0 .1rem;
+}
+
+.contact-subtitle {
+  font-family: var(--pixel);
+  font-size: 1rem;
+  color: var(--muted);
+  opacity: .85;
+  margin: 0 0 1rem;
+}
+.contact-subtitle .prompt { color: var(--green) }
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-box {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-family: var(--pixel);
+  font-size: .8rem;
+  padding: .8rem 1.4rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text);
+  background-color: var(--chip);
+  border: 2px solid transparent;
+  transition: all .2s ease;
+}
+.contact-box:hover {
+  border-color: var(--green-line);
+  box-shadow: 0 0 8px var(--green-dim);
+}
+
+.icon { width: 20px; height: 20px; object-fit: contain }
+
+.email-heading {
+  font-family: var(--pixel);
+  font-size: 1rem;
+  color: var(--green);
+  margin: 0 0 .8rem;
+}
+
+.footer-form-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  padding-top: .5rem;
+}
+
+/* font-size era 0.1rem: el correo quedaba ilegible. */
+.footer-form-style input {
+  font-family: var(--pixel);
+  font-size: .7rem;
+  line-height: 1.2;
+  min-width: 360px;
+  max-width: 100%;
+  padding: .7rem .8rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background-color: var(--chip);
+  color: var(--text);
+  /* readOnly: sin esto el cursor de texto invita a escribir en un campo
+     que no acepta nada. */
+  cursor: default;
+}
+
+.icon-button {
+  font-family: var(--pixel);
+  font-size: .7rem;
+  background-color: var(--indigo);
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  padding: .7rem .8rem;
+  min-width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color .2s ease;
+}
+.icon-button:hover { background-color: var(--indigo-dark) }
+
+/* El boton de copiar va en su propia linea, debajo del correo. */
+.copy-row { flex-basis: 100%; display: flex; justify-content: center; margin-top: .25rem }
+
+@media (max-width: 620px) {
+  .contact-footer { padding: 1rem 1rem 1.5rem }
+  .contact-title { font-size: 1.2rem }
+  .contact-subtitle { font-size: .7rem }
+  .contact-box { font-size: .65rem; padding: .7rem 1rem }
+  .email-heading { font-size: .75rem }
+  .footer-form-style input { min-width: 0; width: 100%; font-size: .6rem }
+}
