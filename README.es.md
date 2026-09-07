@@ -90,7 +90,7 @@ C4Container
 
   System_Boundary(portfolio, "Portafolio - alojado en Vercel") {
     Container(spa, "SPA", "React 19, Create React App", "Todas las secciones, el cambio de tema y el de idioma. Un solo bundle de JS, sin router.")
-    Container(assets, "Assets estaticos", "public/", "40 iconos del stack, 5 capturas de proyectos, los dos CV, la imagen OG y el favicon.")
+    Container(assets, "Assets estaticos", "public/", "Los iconos del stack, las capturas de proyectos, los dos CV, la imagen OG y el favicon.")
   }
 
   System_Ext(fonts, "Google Fonts", "")
@@ -165,7 +165,7 @@ src/
     ├── LanguageContext.js Proveedor, t() y el atributo lang del documento
     └── translations.js    Todo el texto visible, ES y EN
 public/
-├── icons/                 40 SVG, servidos localmente
+├── icons/                 Iconos del stack, servidos localmente
 ├── index.html             Fuentes, meta tags y data-theme="dark"
 ├── manifest.json          Nombre e icono de la PWA
 └── *.jpg *.pdf *.png      Capturas, los dos CV, avatar, imagen OG

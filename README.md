@@ -90,7 +90,7 @@ C4Container
 
   System_Boundary(portfolio, "Portfolio - hosted on Vercel") {
     Container(spa, "SPA", "React 19, Create React App", "Every section, the theme switch and the language switch. One JS bundle, no router.")
-    Container(assets, "Static assets", "public/", "40 stack icons, 5 project screenshots, both CVs, the OG image and the favicon.")
+    Container(assets, "Static assets", "public/", "The stack icons, the project screenshots, both CVs, the OG image and the favicon.")
   }
 
   System_Ext(fonts, "Google Fonts", "")
@@ -166,7 +166,7 @@ src/
     ├── LanguageContext.js Provider, t(), and the html lang attribute
     └── translations.js    Every visible string, ES and EN
 public/
-├── icons/                 40 SVGs, self-hosted
+├── icons/                 Stack icons, self-hosted
 ├── index.html             Fonts, meta tags and data-theme="dark"
 ├── manifest.json          PWA name and icon
 └── *.jpg *.pdf *.png      Screenshots, both CVs, avatar, OG image
