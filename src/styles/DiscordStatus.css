@@ -1,0 +1,170 @@
+/* Tarjeta estilo Discord.
+   Estructura y detalles del original; superficies, bordes, radios y escala
+   de texto salen de los tokens de index.css.
+   El azul y el morado de los roles se quedan: no son acentos sueltos, son
+   el color propio de Discord y es lo que hace que la tarjeta se lea como
+   una tarjeta de Discord. Van declarados una sola vez, aqui. */
+.discord-profile {
+  --role-a: #3b82f6;
+  --role-b: #a855f7;
+  --bubble: #2c2f33;
+
+  position: relative;
+  overflow: hidden;
+  position: sticky;
+  top: 6rem;
+}
+
+[data-theme="light"] .discord-profile {
+  --role-a: #2563eb;
+  --role-b: #9333ea;
+  --bubble: #e2e8f0;
+}
+
+/* Banner animado. El degradado queda debajo, asi que si el gif no carga
+   la cabecera sigue teniendo color en vez de un hueco. */
+.banner-gif {
+  height: 100px;
+  background-color: var(--card);
+  background-image: url('https://i.pinimg.com/originals/02/87/d3/0287d3ba8b3330fca99f69e2001d3168.gif');
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-container { padding: 0 1rem 1rem }
+
+/* Burbuja del quote, al lado del avatar. El avatar monta sobre el banner. */
+.note-bubble {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  margin-top: -35px;
+}
+
+.note-avatar-wrapper { position: relative; flex: none }
+
+.note-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--surface);
+  background: var(--chip);
+  display: block;
+  transition: transform .3s ease;
+}
+.note-avatar:hover { transform: scale(1.05) }
+
+.status-circle {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--green);
+  border: 3px solid var(--surface);
+}
+
+.note-content {
+  background-color: var(--bubble);
+  padding: .6rem .8rem;
+  border-radius: .9rem;
+  border-top-left-radius: .35rem;
+  font-size: var(--t-sm);
+  line-height: 1.45;
+  align-self: flex-end;
+  transition: background-color .3s;
+}
+.note-content:hover { border-top-left-radius: .9rem }
+.note-text { margin: 0 }
+
+.profile-info h3 { font-size: 1.25rem; font-weight: 700; margin: .9rem 0 0 }
+.tag { font-size: var(--t-sm); color: var(--muted); margin: .1rem 0 .7rem }
+
+.playing { font-size: var(--t-sm); color: var(--role-b); margin: 0 0 1rem }
+.playing strong { font-weight: 700 }
+
+/* Widget de "escuchando". Se desvanece al entrar cada canción nueva. */
+.spotify-widget {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: .6rem .8rem;
+  margin-bottom: 1.2rem;
+}
+.album-art { width: 50px; height: 50px; object-fit: cover; border-radius: .4rem; flex: none; background: var(--chip) }
+.song-info { min-width: 0 }
+.song { font-weight: 700; font-size: var(--t-sm); margin: 0 0 .15rem; overflow-wrap: break-word }
+.artist { font-size: var(--t-xs); color: var(--muted); margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+
+.fade-in { animation: fadeInAlbum .7s ease-in-out }
+@keyframes fadeInAlbum {
+  from { opacity: 0; transform: translateY(5px) }
+  to { opacity: 1; transform: translateY(0) }
+}
+
+.discord-section + .discord-section { margin-top: 1.2rem }
+.discord-section p { font-size: var(--t-sm); color: var(--muted); margin: .3rem 0; line-height: 1.55 }
+
+.external-link a { color: var(--green); text-decoration: none; word-break: break-all }
+.external-link a:hover { text-decoration: underline }
+
+.sic-parvis { text-align: center; color: var(--muted); font-size: var(--t-xs); margin: 1rem 0 0 }
+
+.joined { display: flex; align-items: center; gap: .4rem; font-size: var(--t-sm); color: var(--muted) }
+.icon-inline { width: 18px; height: 18px; flex: none }
+
+.roles { display: flex; gap: .5rem; flex-wrap: wrap }
+
+.role-pill {
+  padding: .3rem .75rem;
+  border-radius: 1rem;
+  font-size: var(--t-xs);
+  font-weight: 700;
+  color: #fff;
+  background-color: var(--role-a);
+  transition: filter .2s;
+}
+.role-pill.color-1 { background-color: var(--role-b) }
+.role-pill:hover { filter: brightness(1.15) }
+
+.message-box {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: .5rem .75rem;
+  margin-top: 1.2rem;
+  transition: border-color .2s;
+}
+.message-box:focus-within { border-color: var(--green-line) }
+.message-box input {
+  background: none;
+  border: 0;
+  outline: none;
+  width: 100%;
+  min-width: 0;
+  font-family: var(--mono);
+  font-size: var(--t-sm);
+  color: var(--text);
+}
+.message-box button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: var(--muted);
+  display: flex;
+  transition: color .2s;
+}
+.message-box button:hover { color: var(--green) }
+
+@media (max-width: 860px) {
+  .discord-profile { position: static; max-width: 400px; margin: 0 auto }
+}
