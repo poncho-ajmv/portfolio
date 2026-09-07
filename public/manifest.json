@@ -1,0 +1,15 @@
+{
+  "short_name": "poncho_ajmv",
+  "name": "poncho_ajmv | Ingeniero en Sistemas",
+  "icons": [
+    {
+      "src": "logo1.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0d1117",
+  "background_color": "#0d1117"
+}
