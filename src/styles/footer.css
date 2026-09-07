@@ -1,0 +1,24 @@
+/* El footer es la misma ventana del hero, ya cerrada.
+   Reusa .terminal-box (forma, padding, radio, escala) y solo cambia lo que
+   distingue a una sesion terminada: borde neutro, sin glow, texto apagado.
+   Reusarla en vez de copiar sus valores es lo que evita que las dos se
+   desalineen la proxima vez que se toque una. */
+.footer.terminal-box {
+  margin: 3rem 0 0;
+  min-height: 0;
+  border-color: var(--line);
+  box-shadow: none;
+  color: var(--muted);
+}
+
+/* En el hero el prompt es verde porque toda la caja lo es. Aca el texto va
+   apagado, asi que el prompt y el nombre llevan el verde por su cuenta. */
+.footer .prompt { color: var(--green); font-weight: 600 }
+.footer .author-name { color: var(--green); font-weight: 600 }
+
+/* El tema claro le pone glow a .terminal-box; la ventana cerrada no lo lleva. */
+[data-theme="light"] .footer.terminal-box { box-shadow: none }
+
+/* Contribuciones de GitHub. Si el SVG no carga, no se renderiza nada. */
+.github-snake { margin: 0 auto 2rem; max-width: 100% }
+.github-snake img { max-width: 100%; height: auto; display: block; margin: 0 auto; opacity: .85 }
