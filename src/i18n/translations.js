@@ -124,6 +124,12 @@ export const translations = {
       // El orden debe coincidir con projectsMeta en components/ProjectCard.js.
       items: [
         {
+          title: 'Ditherra',
+          description:
+            'Pixel-art sprite generator: an AI agent paints them step by step, reviewing and correcting its own canvas, with local or cloud models.',
+          tags: ['Python', 'LangGraph', 'Next.js'],
+        },
+        {
           title: 'Lienzo',
           description:
             'Desktop image editor in Rust, in the spirit of Paint. Installable and portable for Windows, macOS and Linux, with ten themes and two languages.',
@@ -136,22 +142,16 @@ export const translations = {
           tags: ['Python', 'XGBoost', 'Monte Carlo'],
         },
         {
-          title: 'Automatic USB backup',
-          description:
-            'Backs up photos, documents and videos to a USB drive with nothing to install. Pure Python, 75 file types, and by design it never deletes an original.',
-          tags: ['Python', 'GPL-2.0', 'Cross-platform'],
-        },
-        {
           title: 'Film Fanatic',
           description:
             'Movie and series browser on top of TMDb: cast, trailers, where to watch it, and favorites. Installable PWA, with the API key behind a proxy.',
           tags: ['React', 'Router', 'PWA', 'TMDb'],
         },
         {
-          title: 'Lexical Analyzer',
+          title: 'Automatic USB backup',
           description:
-            'Tokenizes text or JSON files, flags lexical errors with their position, and exports the parse tree for Graphviz.',
-          tags: ['React', 'Automata', 'Graphviz'],
+            'Backs up photos, documents and videos to a USB drive with nothing to install. Pure Python, 75 file types, and by design it never deletes an original.',
+          tags: ['Python', 'GPL-2.0', 'Cross-platform'],
         },
         {
           title: 'Interactive Terminal',
@@ -304,6 +304,12 @@ export const translations = {
       live: 'Demo',
       items: [
         {
+          title: 'Ditherra',
+          description:
+            'Generador de sprites en pixel art: un agente de IA los pinta paso a paso, mirando y corrigiendo su propio lienzo, con modelos locales o en la nube.',
+          tags: ['Python', 'LangGraph', 'Next.js'],
+        },
+        {
           title: 'Lienzo',
           description:
             'Editor de imágenes de escritorio en Rust, al estilo de Paint. Instalable y portable para Windows, macOS y Linux, con diez temas y en dos idiomas.',
@@ -316,22 +322,16 @@ export const translations = {
           tags: ['Python', 'XGBoost', 'Monte Carlo'],
         },
         {
-          title: 'Respaldo automático en USB',
-          description:
-            'Respalda fotos, documentos y videos en una USB sin instalar nada. Python puro, 75 tipos de archivo, y por diseño nunca borra un original.',
-          tags: ['Python', 'GPL-2.0', 'Multiplataforma'],
-        },
-        {
           title: 'Film Fanatic',
           description:
             'Buscador de películas y series sobre TMDb: reparto, tráilers, dónde verla y favoritos. PWA instalable, con la clave de API detrás de un proxy.',
           tags: ['React', 'Router', 'PWA', 'TMDb'],
         },
         {
-          title: 'Analizador Léxico',
+          title: 'Respaldo automático en USB',
           description:
-            'Tokeniza archivos de texto o JSON, señala los errores léxicos con su posición y exporta el árbol de derivación para Graphviz.',
-          tags: ['React', 'Autómatas', 'Graphviz'],
+            'Respalda fotos, documentos y videos en una USB sin instalar nada. Python puro, 75 tipos de archivo, y por diseño nunca borra un original.',
+          tags: ['Python', 'GPL-2.0', 'Multiplataforma'],
         },
         {
           title: 'Terminal Interactiva',

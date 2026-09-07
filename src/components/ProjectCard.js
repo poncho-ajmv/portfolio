@@ -6,6 +6,11 @@ import { useLang } from '../i18n/LanguageContext';
 // etiquetas se toman de projects.items, en el mismo orden que este array.
 const projectsMeta = [
   {
+    image: '/ditherra.jpg',
+    liveLink: null,
+    codeLink: 'https://github.com/poncho-ajmv/Ditherra',
+  },
+  {
     image: '/lienzo.jpg',
     liveLink: 'https://lienzo.surge.sh/',
     codeLink: 'https://github.com/poncho-ajmv/Lienzo',
@@ -16,20 +21,15 @@ const projectsMeta = [
     codeLink: 'https://github.com/poncho-ajmv/mundial-2026',
   },
   {
-    // Sin captura: portada tipográfica con la misma altura que las imágenes.
-    cover: '[ USB ]\n\n> respaldo.py',
-    liveLink: null,
-    codeLink: 'https://github.com/poncho-ajmv/respaldo-automatico-usb',
-  },
-  {
     image: '/filmfanatic.jpg',
     liveLink: 'https://film-fanatic-eta.vercel.app',
     codeLink: 'https://github.com/poncho-ajmv/FilmFanatic',
   },
   {
-    image: '/lexico.jpg',
-    liveLink: 'https://analizador-lexico-web.vercel.app/',
-    codeLink: 'https://github.com/poncho-ajmv/analizador-lexico-web',
+    // Sin captura: portada tipografica con la misma altura que las imagenes.
+    cover: '[ USB ]\n\n> respaldo.py',
+    liveLink: null,
+    codeLink: 'https://github.com/poncho-ajmv/respaldo-automatico-usb',
   },
   {
     image: '/terminal.jpg',
