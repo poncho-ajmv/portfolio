@@ -1,0 +1,91 @@
+.side-by-side-section { display: grid; grid-template-columns: 1fr 360px; gap: 1.75rem; align-items: start }
+
+.skills-category { margin-bottom: 1.35rem }
+/* Rejilla, no flex-wrap: asi las columnas alinean entre categorias y el
+   icono que sobra de una fila de 7 cae en columna en vez de quedar suelto. */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 1rem;
+}
+
+.skill-icon-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: .75rem;
+  background: var(--chip);
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .15s, border-color .15s;
+}
+/* :focus-visible además de :hover — antes el tooltip solo existía con mouse. */
+.skill-icon-wrapper:hover,
+.skill-icon-wrapper:focus-visible { transform: scale(1.1); border-color: var(--green-line) }
+
+.skill-icon-rounded { width: 40px; height: 40px; object-fit: contain }
+
+.skill-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--bg);
+  color: var(--green);
+  border: 1px solid var(--green-line);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  white-space: nowrap;
+  padding: .2rem .5rem;
+  border-radius: var(--r-sm);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s, transform .15s;
+  z-index: 20;
+}
+.skill-icon-wrapper:hover .skill-tooltip,
+.skill-icon-wrapper:focus-visible .skill-tooltip { opacity: 1; transform: translateX(-50%) translateY(0) }
+
+@media (max-width: 860px) {
+  .side-by-side-section { grid-template-columns: 1fr }
+}
+
+/* En pantallas tactiles el tooltip de :hover nunca aparece, asi que el nombre
+   pasa a ir fijo debajo del icono. En desktop no cambia nada: ahi sigue el
+   tooltip y la rejilla de siempre.
+   Se piden las dos condiciones a proposito: hay navegadores Android que
+   reportan hover:hover por error, y con el ancho no se escapan. */
+@media (hover: none), (max-width: 620px) {
+  .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .5rem }
+
+  .skill-icon-wrapper {
+    width: auto;
+    /* con el nombre debajo la caja ya no es cuadrada: la altura la da el contenido */
+    aspect-ratio: auto;
+    height: auto;
+    flex-direction: column;
+    gap: .35rem;
+    padding: .6rem .25rem;
+  }
+
+  .skill-icon-wrapper:hover { transform: none }
+
+  .skill-icon-wrapper:hover .skill-tooltip,
+  .skill-tooltip {
+    position: static;
+    opacity: 1;
+    transform: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    color: var(--muted);
+    font-size: 9.5px;
+    line-height: 1.2;
+    letter-spacing: .02em;
+    white-space: normal;
+    text-align: center;
+    z-index: auto;
+  }
+}
