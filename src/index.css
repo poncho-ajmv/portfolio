@@ -1,0 +1,200 @@
+/* ============================================================
+   TOKENS + CLASES COMPARTIDAS
+   Un acento (verde), un radio, un borde, una escala de texto.
+   El indigo #4f46e5 se quedo: es el color del bloque de contacto en el original.
+   Los cuatro verdes (#00ff9c, #00ff88, #00ff00, #16c784) ahora son --green.
+   Las fuentes se cargan en public/index.html, no con @import.
+   ============================================================ */
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --card: #0f1c18;
+  --line: #232b33;              /* borde por defecto, TODAS las tarjetas */
+  --green: #00ff9c;
+  --green-dim: rgba(0, 255, 156, .13);
+  --green-line: rgba(0, 255, 156, .35);
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --chip: #1b2430;
+  --nav: #fdfdfd;              /* nav: blanco mas brillante que --text */
+
+  --mono: 'Fira Code', ui-monospace, monospace;
+  --pixel: 'Press Start 2P', monospace;
+
+  --r: 10px;                    /* radio único */
+  --r-sm: 6px;
+
+  --t-xs: .68rem;
+  --t-sm: .78rem;
+  --t-md: .88rem;
+  --t-lg: 1rem;
+  --px-sm: .7rem;               /* pixel chico */
+  --px-md: .82rem;              /* pixel títulos */
+
+  --maxw: 960px;
+  /* Indigo del bloque de contacto: es el color del original y ahi se queda,
+     declarado una sola vez. */
+  --indigo: #4f46e5;
+  --indigo-dark: #4338ca;
+
+  --expo-out: cubic-bezier(.16, 1, .3, 1);
+
+  color-scheme: dark;
+}
+
+/* Modo claro. El verde sube de #00997c a #007a63: 3.28:1 no pasaba AA,
+   el nuevo da 4.84:1 sobre el fondo claro. */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f1f5f9;
+  --surface: #ffffff;
+  --card: #f2fbf7;
+  --line: #d7dfe6;
+  --green: #007a63;
+  --green-dim: rgba(0, 122, 99, .1);
+  --green-line: rgba(0, 122, 99, .38);
+  --text: #0f172a;
+  --muted: #5b6674;
+  --chip: #e5ebf0;
+  --nav: #0f172a;
+}
+
+* { box-sizing: border-box }
+html { scroll-behavior: smooth }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background .3s, color .3s;
+}
+
+a { color: inherit }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.25rem }
+
+/* scroll-margin-top: sin esto el título de la sección queda debajo
+   del header sticky al hacer clic en el nav. */
+section { padding: 2.75rem 0; scroll-margin-top: 96px }
+
+/* superficie base — la comparten terminal, experiencia, discord y proyectos */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  transition: border-color .2s, transform .2s;
+}
+.panel:hover { border-color: var(--green-line) }
+
+/* pixel: SOLO títulos de sección y el CTA. Dos tamaños, no cinco. */
+.sec-title {
+  font-family: var(--pixel);
+  font-size: var(--px-md);
+  color: var(--green);
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+.sec-title + .sec-title,
+.experience-timeline + .sec-title { margin-top: 3rem }
+
+/* eyebrow: la etiqueta chica que rotula bloques.
+   Antes eran tres reglas iguales: .skill-cat h3, .dsec h4 y el subtítulo
+   de experiencia. */
+.eyebrow {
+  font-size: var(--t-xs);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 .6rem;
+}
+.eyebrow--green { color: var(--green) }
+
+/* chip: una pastilla, dos variantes.
+   Antes eran .tag (radio 4px), .drole (6px) y .exp-type (20px). */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: var(--t-xs);
+  font-weight: 500;
+  padding: .18rem .5rem;
+  border-radius: var(--r-sm);
+  background: var(--chip);
+  color: var(--muted);
+  border: 1px solid transparent;
+}
+.chip--green {
+  background: var(--green-dim);
+  color: var(--green);
+  border-color: var(--green-line);
+  font-weight: 600;
+}
+/* iconos monocromos que deben invertirse solo en oscuro.
+   Reemplaza el filter: invert(1) inline que dejaba el logo de GitHub
+   blanco sobre blanco en modo claro. */
+.icon-adapt { filter: invert(1) }
+[data-theme="light"] .icon-adapt { filter: none }
+
+/* botones: exactamente dos variantes. Antes eran cuatro estilos distintos. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  font-family: var(--mono);
+  font-size: var(--t-sm);
+  font-weight: 600;
+  text-decoration: none;
+  padding: .5rem .85rem;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--text);
+  transition: all .18s;
+}
+.btn:hover { border-color: var(--green-line); color: var(--green); background: var(--green-dim) }
+.btn--fill { background: var(--green-dim); border-color: var(--green-line); color: var(--green) }
+.btn--fill:hover { background: var(--green); color: var(--bg); border-color: var(--green) }
+.btn svg { width: 14px; height: 14px; fill: currentColor }
+.btn img { width: 17px; height: 17px }
+
+:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 4px }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important }
+  html { scroll-behavior: auto }
+}
+
+/* ============================================================ CAMBIO DE TEMA
+   El tema nuevo se revela en diagonal sobre el anterior con la View
+   Transitions API. La direccion depende del tema al que se entra.
+   Si el navegador no la soporta, o el usuario pidio menos movimiento, el
+   cambio es instantaneo (lo resuelve theme.js, no hace falta CSS extra). */
+::view-transition-group(root) {
+  animation-duration: .7s;
+  animation-timing-function: var(--expo-out);
+}
+::view-transition-new(root) { animation-name: reveal-light; animation-fill-mode: both }
+[data-theme="dark"]::view-transition-new(root) { animation-name: reveal-dark; animation-fill-mode: both }
+::view-transition-old(root) { animation: none; z-index: -1 }
+
+@keyframes reveal-dark {
+  from { clip-path: polygon(50% -71%, -50% 71%, -50% 71%, 50% -71%) }
+  to   { clip-path: polygon(50% -71%, -50% 71%, 50% 171%, 171% 50%) }
+}
+@keyframes reveal-light {
+  from { clip-path: polygon(171% 50%, 50% 171%, 50% 171%, 171% 50%) }
+  to   { clip-path: polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%) }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(root),
+  ::view-transition-new(root),
+  ::view-transition-old(root) { animation: none !important }
+}
