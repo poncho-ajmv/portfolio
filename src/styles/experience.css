@@ -1,0 +1,66 @@
+.experience-timeline {
+  border-left: 1px solid var(--line);
+  padding-left: 1.6rem;
+  margin-left: .4rem;
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+
+.experience-card { position: relative; background: var(--card); padding: 1.1rem 1.3rem }
+.experience-card::before {
+  content: '';
+  position: absolute;
+  left: -1.98rem;
+  top: 1.4rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 3px var(--bg);
+}
+
+.experience-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: .75rem;
+}
+
+/* En educacion la tarjeta no lleva bullets: sin esto el margen del header
+   queda colgando y la tarjeta se ve vacia por abajo. */
+.experience-card-header:last-child { margin-bottom: 0 }
+
+.experience-role { font-size: var(--t-lg); font-weight: 700; margin: 0 0 .25rem }
+.experience-company {
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+}
+a.experience-company:hover { border-bottom-color: currentColor }
+.experience-location { font-size: var(--t-sm); color: var(--muted) }
+
+.experience-meta { display: flex; flex-direction: column; align-items: flex-end; gap: .3rem; flex: none }
+.experience-period { font-size: var(--t-xs); color: var(--muted) }
+
+.experience-card .eyebrow { margin: 1rem 0 .5rem }
+.experience-card .eyebrow:first-of-type { margin-top: 0 }
+
+.experience-bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .45rem }
+.experience-bullets li {
+  font-size: var(--t-sm);
+  line-height: 1.65;
+  opacity: .9;
+  padding-left: 1.1rem;
+  position: relative;
+}
+.experience-bullets li::before { content: '>'; position: absolute; left: 0; color: var(--green); font-weight: 700 }
+
+@media (max-width: 620px) {
+  .experience-card-header { flex-direction: column }
+  .experience-meta { align-items: flex-start }
+}
