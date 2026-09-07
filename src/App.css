@@ -1,0 +1,106 @@
+/* Header sticky. Los tokens y las clases compartidas viven en index.css. */
+
+header.modern-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s, padding .25s;
+  padding: 1.1rem 0;
+}
+header.modern-header.shrink { padding: .55rem 0; border-color: var(--line) }
+
+.header-container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-left { display: flex; align-items: center; gap: .9rem; min-width: 0 }
+
+.header-avatar {
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
+  border: 3px solid #3b82f6;
+  transition: all .3s ease-in-out;
+}
+header.modern-header.shrink .header-avatar { width: 40px; height: 40px; border-width: 2px }
+
+.header-text { display: flex; flex-direction: column; justify-content: center; gap: .2rem }
+
+.header-name { font-size: 1.3rem; font-weight: bold; margin: 0; transition: font-size .3s ease-in-out }
+header.modern-header.shrink .header-name { font-size: 1rem }
+
+.job-status {
+  background-color: #16c784;
+  padding: .4rem 1rem;
+  color: #fff;
+  border-radius: 20px;
+  font-size: .95rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: .3rem;
+  white-space: pre-line;
+  width: fit-content;
+  text-align: center;
+}
+/* Solo se oculta el badge; el nombre queda siempre visible. */
+header.modern-header.shrink .job-status { display: none }
+
+.header-right { display: flex; align-items: center; gap: .3rem }
+
+/* Bloque CTA. Estructura y look del original: borde verde con glow,
+   Press Start 2P y el boton indigo. Los colores salen de los tokens. */
+.cta-mario-block {
+  padding: 2rem 2.5rem;
+  border-radius: var(--r);
+  /* Sin margen arriba: el padding de <section> ya separa de proyectos. */
+  margin: 0 0 3rem;
+  font-family: var(--pixel);
+  background-color: var(--bg);
+  border: 2px solid var(--green);
+  box-shadow: 0 0 16px var(--green-line);
+  transition: background-color .3s, border-color .3s, box-shadow .3s;
+}
+
+.cta-mario-line {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 2;
+  margin: 0;
+  color: var(--text);
+}
+.cta-mario-line .prompt { color: var(--green) }
+
+.cv-center { display: flex; justify-content: center; margin-top: 1rem }
+
+.cv-download-btn {
+  font-family: var(--pixel);
+  font-size: .75rem;
+  padding: .6rem 1.2rem;
+  background-color: var(--indigo);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, .3);
+  transition: background-color .2s ease, transform .2s ease;
+}
+.cv-download-btn:hover { background-color: var(--indigo-dark); transform: scale(1.05) }
+
+@media (max-width: 620px) {
+  .cta-mario-block { padding: 1.5rem 1.25rem }
+  .cta-mario-line { font-size: .6rem }
+}
+
+@media (max-width: 620px) {
+  .header-container { flex-direction: column; align-items: flex-start; gap: .7rem }
+}
