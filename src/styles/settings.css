@@ -1,0 +1,71 @@
+.settings-menu { position: relative }
+
+.settings-gear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nav);
+  padding: .45rem .6rem;
+  border-radius: var(--r-sm);
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transition: color .15s, background .15s;
+}
+.settings-gear:hover,
+.settings-gear.open { color: var(--green); background: var(--green-dim) }
+
+.settings-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + .4rem);
+  z-index: 60;
+  min-width: 190px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: .8rem;
+  text-align: left;
+}
+
+.settings-heading {
+  font-family: var(--pixel);
+  font-size: var(--px-sm);
+  color: var(--green);
+  margin: 0 0 .8rem;
+}
+
+.settings-section + .settings-section { margin-top: .8rem }
+.settings-label {
+  display: block;
+  font-size: var(--t-xs);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: .4rem;
+}
+
+.settings-options { display: flex; gap: .35rem; flex-wrap: wrap }
+
+.settings-option {
+  font-family: var(--mono);
+  font-size: var(--t-sm);
+  font-weight: 600;
+  padding: .35rem .6rem;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--text);
+  transition: all .18s;
+}
+.settings-option:hover { border-color: var(--green-line); color: var(--green); background: var(--green-dim) }
+.settings-option.active {
+  background: var(--green-dim);
+  border-color: var(--green-line);
+  color: var(--green);
+}
+
+.theme-btn { display: inline-flex; align-items: center; justify-content: center; padding: .35rem .55rem }
+.theme-icon { width: 16px; height: 16px }
